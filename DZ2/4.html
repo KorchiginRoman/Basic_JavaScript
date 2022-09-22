@@ -30,8 +30,53 @@
 -->
 <script>
   "use strict";
+/**
+ * Функция складывает два переданных числа
+ * @param {number} a - первое число
+ * @param {number} b - второе число
+ * @returns {number} Сумма двух чисел
+ */
+ 
+function addition(a, b){
+  return a + b;
+}
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+/** 
+ * Функция вычитает два переданных числа
+ * @param {number} a - первое число
+ * @param {number} b - второе число
+ * @returns {number} Разница двух чисел
+*/
+
+function substraction(a, b){
+  if (a > b) {
+    return a - b;
+  }
+  return b - a
+}
+
+/** 
+ * Функция перемножает два переданных числа
+ * @param {number} a - первое число
+ * @param {number} b - второе число
+ * @returns {number} Произведение двух чисел
+*/
+
+function multiplication(a, b){
+  return a * b
+}
+
+/** 
+ * Функция делит два переданных числа
+ * @param {number} a - первое число
+ * @param {number} b - второе число
+ * @returns {number} Частное двух чисел
+*/
+
+function division(a, b){
+  return a / b
+}
+
 </script>
 </body>
 </html>

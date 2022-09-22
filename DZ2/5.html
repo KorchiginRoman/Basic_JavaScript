@@ -32,7 +32,84 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  /**
+   * Функция складывает два переданных числа
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @returns {number} Сумма двух чисел
+   */
+ 
+  function addition(a, b){
+    return a + b;
+  }
+
+  /** 
+   * Функция вычитает два переданных числа
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @returns {number} Разница двух чисел
+  */
+
+  function substraction(a, b){
+    if (a > b) {
+      return a - b;
+    }
+    return b - a
+  }
+
+  /** 
+  * Функция перемножает два переданных числа
+  * @param {number} a - первое число
+  * @param {number} b - второе число
+  * @returns {number} Произведение двух чисел
+  */
+
+  function multiplication(a, b){
+    return a * b
+  }
+
+  /** 
+  * Функция делит два переданных числа
+  * @param {number} a - первое число
+  * @param {number} b - второе число
+  * @returns {number} Частное двух чисел
+  */
+
+  function division(a, b){
+    return a / b
+  }
+  
+
+  /**
+   * В функцию передается знак операции(operation), после чего происходят соответствующие математические действия.
+   * @param {number} arg1 - первое число
+   * @param {number} arg2 - второе число
+   * @param {string} operation - арифметичсекой операция одна из: "+", "-", "*", "/".
+   * @returns {number} Результат, выбранной арифметичсекой операции и двух аргументов, может возвражать строку если оператор задан неверно.
+   * 
+   * */
+  function mathOperation(arg1, arg2, operation){
+    switch (operation) {
+      case "+":
+        return addition(arg1, arg2);
+      case "-":
+        return substraction(arg1, arg2);
+      case "*":
+        return multiplication(arg1, arg2);
+      case "/":
+        return division(arg1, arg2);
+      default: 
+        return alert("Вы ввели знак не арифметичсекой операции!");
+    }
+  }
+
+  let arg_1 = +prompt('Введите первое число: ');
+  let arg_2 = +prompt('Введите второе число: ');
+  let operation_1 = prompt('Введите арифметическое действие (+, -, *, /), которое хотите выполнить: ');
+
+  alert(mathOperation(arg_1,arg_2,operation_1));
+
+
 </script>
 </body>
 </html>

@@ -25,21 +25,38 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
 <script>
   "use strict";
 
-  function declinationOfNumber(count, one, two, five) {
+  /* Math.abs. Этот метод возвращает абсолютное значение числа, то есть иными словами - если число неотрицательное, то его и возвращает, а если отрицательное - отбрасывает знак "минус".
 
+  Передача нечисловой строки или undefined/пустой переменной вернет NaN. Передача null вернет 0.*/
+
+  /**
+   * @param {number} count - количество предметов, которых необходимо просклонять.
+   * @param {string} one - первый вариант склонения. Для параметра one.
+   * @param {string} two - второй вариант склонения. Для параметра two.
+   * @param {string} five - третий вариант склонения. Для параметра five.
+   * @returns {string} Склоняемое слово в зависимости от введенного параметра count.
+   */
+  function declinationOfNumber(count, one, two, five) {
+    let n = Math.abs(count);
+    n %= 100;
+    if (n >= 5 && n <= 20) {
+      return five;
+    }
+    n %= 10;
+    if (n === 1) {
+      return one;
+    }
+    if (n >= 2 && n <= 4) {
+      return two;
+    }
+    return five;
   }
 
-  // Число яблок, можно пробовать поставить свое целое, положительное число.
-  const applesNumber = 5;
-  // Получаем от функции одно из слов "яблоко", "яблока" или "яблок".
-  const word = declinationOfNumber(applesNumber, "яблоко", "яблока", "яблок");
-  // Выводим корректную строку, например:
-  // "У меня есть 1 яблоко."
-  // "У меня есть 2 яблока."
-  // "У меня есть 5 яблок."
-  // При любом целом, положительном числе в applesNumber, строка, которая
-  // выводится в console.log, должна иметь правильное склонение слова "яблоко".
-  console.log(`У меня есть ${applesNumber} ${word}.`);
+  let applesNumber = + prompt("Введите количество котов, от которого хотите получить склонение: ");
+  const word = declinationOfNumber(applesNumber, "кот", "кота", "котов");
+
+  alert(`У меня есть ${applesNumber} ${word}.`);
+
 
 </script>
 </body>
